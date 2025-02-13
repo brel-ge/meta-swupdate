@@ -292,6 +292,7 @@ def swupdate_add_artifacts(d, list_for_cpio):
             for fstype in fstypes:
                 image_found = False
                 for imagebase in imagebases:
+                    imagebase = imagebase + '.rootfs'
                     image_found = add_image_to_swu(d, deploydir, imagebase + fstype, s, encrypted, list_for_cpio)
                     if image_found:
                         break
